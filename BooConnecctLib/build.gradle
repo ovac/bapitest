@@ -1,0 +1,35 @@
+apply plugin: 'android-library'
+
+android {
+    //update the following to match your sdk and build tools versions
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+    compile 'com.mcxiaoke.volley:library:1.0.18'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
+    compile 'org.apache.httpcomponents:httpcore:4.4.3'
+    compile 'org.apache.httpcomponents:httpmime:4.3.6'
+    androidTestCompile 'com.android.support:support-annotations:23.0.1'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support.test:rules:0.4.1'
+}
